@@ -42,7 +42,7 @@ def create_samples(files, sentiment):
         sentence = REPLACE_NO_SPACE.sub("", text.strip())
         sentence = REPLACE_WITH_SPACE.sub("", sentence)
         sentence = sentence.strip()
-        data.append({"sentence": sentence, "label": sentiment})
+        data.append({"sentence": sentence, "label": int(sentiment == "positive")})
     return data
 
 
